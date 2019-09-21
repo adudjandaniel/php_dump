@@ -33,7 +33,7 @@
 		for ($i = 0; $i < $array_length; $i++) {
 			$array_dump .= 
 			"<tr>
-				<td class='indexed-array key'>$i</td>
+				<td class='indexed-array num-key'>$i</td>
 				<td class='indexed-array'>" . get_php_dump_html($variable[$i]) . "</td>
 			</tr>";
 		}
@@ -56,6 +56,14 @@
 				</tr>
 			</thead>
 		<tbody>";
+
+		foreach ($variable as $key => $value) {
+			$array_dump .= 
+			"<tr>
+				<td class='associative-array text-key'>$key</td>
+				<td class='associative-array'>" . get_php_dump_html($value) . "</td>
+			</tr>";
+		}
 
 		$array_dump .= "
 			</tbody>
