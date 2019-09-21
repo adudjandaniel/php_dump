@@ -4,7 +4,7 @@
 
 Being familiar with the _fancy_ dump Adobe Coldfusion uses, I can hardly make sense of the raw dumping in php; I need something similar.
 
-#### Functionality (so far):  
+#### Functionality (so far):
 * Dumping
 	* basic types (integer, boolean, float, _string_)
 	* indexed arrays 
@@ -19,4 +19,6 @@ Being familiar with the _fancy_ dump Adobe Coldfusion uses, I can hardly make se
 
 
 #### Check these outputs:  
-<img src="assets/img/dump_1.png" height="300px" /><img src="assets/img/dump_2.png" height="300px" />
+<img src="assets/img/dump_1.png" height="300px"/>
+<img src="assets/img/dump_2.png" height="300px"/>
+<img src="assets/img/dump_3.png" height="300px"/>
