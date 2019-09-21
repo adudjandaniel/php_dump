@@ -1,0 +1,40 @@
+.php-dump, 
+.php-dump th, 
+.php-dump td {
+	border-collapse: collapse;
+	font-family: verdana, sans-serif;
+	background-color: white;
+}
+.php-dump th {
+    color: white;
+    padding: 3px 3px;
+    text-align: left;
+    font-size: 8px;
+    font-weight: bold;
+}
+.php-dump td {
+	padding: 2px 2px;
+	font-size: 9px;
+}
+.php-dump .key {
+	text-align: center;
+}
+.php-dump.indexed-array,
+.php-dump .indexed-array {
+	border: 2px solid #135204;
+}
+.php-dump th.indexed-array {
+	background-color: #1d7907;
+}
+.php-dump .key.indexed-array {
+	background-color: #83e66b;
+}
+.php-dump .associative-array {
+	border:  2px solid #0034ce;
+}
+.php-dump th.associative-array {
+	background-color: #325ad2;
+}
+.php-dump .key.associative-array {
+
+}
