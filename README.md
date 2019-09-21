@@ -19,6 +19,4 @@ Being familiar with the _fancy_ dump Adobe Coldfusion uses, I can hardly make se
 
 
 #### Check these outputs:  
-<img src="assets/img/dump_1.png" height="300px"/>
-<img src="assets/img/dump_2.png" height="300px"/>
-<img src="assets/img/dump_3.png" height="300px"/>
+<img src="assets/img/dump_1.png" height="300px"/><img src="assets/img/dump_2.png" height="300px"/><img src="assets/img/dump_3.png" height="300px"/>
