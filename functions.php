@@ -24,7 +24,7 @@
 		"<table class='php-dump indexed-array'>
 			<thead>
 				<tr>
-					<th class='indexed-array' colspan='2'> $label array</th>
+					<th class='indexed-array' colspan='2'> $label array (indexed)</th>
 				</tr>
 			</thead>
 			<tbody>";
@@ -52,7 +52,7 @@
 		"<table class='php-dump associative-array'>
 			<thead>
 				<tr>
-					<th class='associative-array' colspan='2'> $label array</th>
+					<th class='associative-array' colspan='2'> $label array (associative)</th>
 				</tr>
 			</thead>
 		<tbody>";
