@@ -1,4 +1,4 @@
-## Variables and Error Dumping with PHP
+## Variable and Error Dumping with PHP
 
 **function**: php_dump(_$variable_[, _$label_])
 
