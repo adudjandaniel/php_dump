@@ -6,6 +6,9 @@
 	background-color: white;
 	vertical-align: top;
 }
+.php-dump .no-display {
+	display: none;
+}
 .php-dump th {
     color: white;
     padding: 3px 3px;
@@ -27,9 +30,11 @@
 .php-dump .indexed-array {
 	border: 2px solid #135204;
 }
+/*Heading of indexed arrays*/
 .php-dump th.indexed-array {
 	background-color: #1d7907;
 }
+/*Keys of indexed arrays*/
 .php-dump .num-key.indexed-array {
 	background-color: #83e66b;
 }
@@ -37,9 +42,11 @@
 .php-dump .associative-array {
 	border:  2px solid #0034ce;
 }
+/*Headings of associative arrays*/
 .php-dump th.associative-array {
 	background-color: #325ad2;
 }
+/*Keys of associative arrays*/
 .php-dump .text-key.associative-array {
 	background-color: #aec2ff;
 }
