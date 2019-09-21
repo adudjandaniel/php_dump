@@ -1,9 +1,13 @@
+table.php-dump {
+	max-width: 60%;
+}
 .php-dump, 
 .php-dump th, 
 .php-dump td {
 	border-collapse: collapse;
 	font-family: verdana, sans-serif;
 	background-color: white;
+	vertical-align: top;
 }
 .php-dump th {
     color: white;
@@ -16,8 +20,11 @@
 	padding: 2px 2px;
 	font-size: 9px;
 }
-.php-dump .key {
+.php-dump .num-key {
 	text-align: center;
+}
+.php-dump .text-key {
+	text-align: left;
 }
 .php-dump.indexed-array,
 .php-dump .indexed-array {
@@ -26,15 +33,16 @@
 .php-dump th.indexed-array {
 	background-color: #1d7907;
 }
-.php-dump .key.indexed-array {
+.php-dump .num-key.indexed-array {
 	background-color: #83e66b;
 }
+.php-dump.associative-array,
 .php-dump .associative-array {
 	border:  2px solid #0034ce;
 }
 .php-dump th.associative-array {
 	background-color: #325ad2;
 }
-.php-dump .key.associative-array {
-
+.php-dump .text-key.associative-array {
+	background-color: #aec2ff;
 }
