@@ -13,7 +13,7 @@ Being familiar with the _fancy_ dump Adobe Coldfusion uses, I can hardly make se
 	Click on the key of the value to toggle it's display.
 
 
-#### The function **_php_dump()_** accepts two arguments: 
+#### The function **_php_dump()_** takes two parameters: 
 1. **variable name** (required)
 2. _label_ (optional)
 
