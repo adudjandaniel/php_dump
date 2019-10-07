@@ -19,15 +19,25 @@ function toggle_values_display () {
 	}
 }
 
-function start_js() {
-	var all_keys = document.querySelectorAll("td[class$='key']");
-	var all_keys_length = all_keys.length;
-	
-	// add click event to all keys
-	for (let i = 0; i < all_keys_length; i++) {
-		all_keys[i].onclick = toggle_values_display;
-	}
-	
+function load_CSS() {
+	var head = document.getElementsByTagName('head')[0];
+	var css_link = document.createElement('link');
+	css_link.rel = "stylesheet";
+	css_link.type = "text/css";
+	css_link.href = "../assets/css/main.css";
+	head.append(css_link);
 }
 
-window.onload = start_js;
+(function start_js() {
+	if (typeof window.notfirstdumpcall === "undefined") {
+		load_CSS();
+		var all_keys = document.querySelectorAll("td[class$='key']");
+		var all_keys_length = all_keys.length;
+		
+		// add click event to all keys
+		for (let i = 0; i < all_keys_length; i++) {
+			all_keys[i].onclick = toggle_values_display;
+		}
+		window.notfirstdumpcall = true;
+	}
+})();
