@@ -110,7 +110,8 @@
 		public static function php_dump($variable, $label = "") {
 			echo self::get_php_dump_html($variable, $label);
 			echo "<script type='text/javascript' 
-			src='../assets/js/main.js' async></script>";
+			src='../vendor/adudjandaniel/php_dump/assets/js/main.js' 
+			async></script>";
 		}
 	}	
 ?>

@@ -24,7 +24,7 @@ function load_CSS() {
 	var css_link = document.createElement('link');
 	css_link.rel = "stylesheet";
 	css_link.type = "text/css";
-	css_link.href = "../assets/css/main.css";
+	css_link.href = "../vendor/adudjandaniel/php_dump/assets/css/main.css";
 	head.append(css_link);
 }
 
