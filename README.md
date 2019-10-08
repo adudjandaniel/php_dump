@@ -2,7 +2,7 @@
 
 **function**: php_dump(_$variable_[, _$label_])
 
-Being familiar with the _fancy_ dump Adobe Coldfusion uses, I can hardly make sense of the raw dumping in php; I need something similar.
+Being used to the _fancy_ dump Adobe Coldfusion uses, I can hardly make sense of the raw dumping in php; I need something similar.
 
 #### Functionality (so far):
 * Dumping
