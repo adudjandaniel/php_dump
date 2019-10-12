@@ -117,6 +117,7 @@
 				strpos($request_uri, $d_root_name));
 			$file_loc_substr = substr($file_loc, $root_pos_dir);
 			$src_path = $d_root_substr . $file_loc_substr;
+			$src_path = "/vendor/adudjandaniel/php_dump/src";
 
 			// store src_path for js
 			echo "
