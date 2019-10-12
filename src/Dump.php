@@ -109,14 +109,14 @@
 
 		public static function php_dump($variable, $label = "") {
 			// File paths
-			$file_loc = __DIR__;
-			$request_uri = $_SERVER["REQUEST_URI"];
-			$d_root_name = explode("/", $request_uri)[2];
-			$root_pos_dir = strpos($file_loc, $d_root_name);
-			$d_root_substr = substr($request_uri, 0, 
-				strpos($request_uri, $d_root_name));
-			$file_loc_substr = substr($file_loc, $root_pos_dir);
-			$src_path = $d_root_substr . $file_loc_substr;
+			// $file_loc = __DIR__;
+			// $request_uri = $_SERVER["REQUEST_URI"];
+			// $d_root_name = explode("/", $request_uri)[2];
+			// $root_pos_dir = strpos($file_loc, $d_root_name);
+			// $d_root_substr = substr($request_uri, 0, 
+			// 	strpos($request_uri, $d_root_name));
+			// $file_loc_substr = substr($file_loc, $root_pos_dir);
+			// $src_path = $d_root_substr . $file_loc_substr;
 			$src_path = "/vendor/adudjandaniel/php_dump/src";
 
 			// store src_path for js
