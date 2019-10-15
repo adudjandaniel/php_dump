@@ -8,10 +8,15 @@
 
 			// Dump for string int boolean floats
 			$basic_dump = 
-			"<table class='php-dump'>
+			"<table class='php-dump' style='border-collapse: collapse; 
+			font-family:verdana, sans-serif; background-color: white; vertical-align: top;'>
 				<tbody>
 					<tr>
-						<td>$variable</td>
+						<td style='border-collapse: collapse;
+						font-family: verdana, sans-serif;background-color: white;
+						vertical-align: top;padding: 2px 2px;font-size: 9px;'>
+							$variable
+						</td>
 					</tr>
 				</tbody>
 			</table>";
@@ -25,10 +30,17 @@
 			$array_length = count($variable);
 
 			$array_dump = 
-			"<table class='php-dump indexed-array'>
+			"<table class='php-dump indexed-array' style='border-collapse: collapse;
+			font-family: verdana, sans-serif; background-color: white;
+			vertical-align: top;border: 2px solid #135204;'>
 				<thead>
 					<tr>
-						<th class='indexed-array' colspan='2'> $label array (indexed)</th>
+						<th class='indexed-array' colspan='2' style='border-collapse: collapse; font-family: verdana, sans-serif;
+						background-color: white; vertical-align: top;color: white;
+    					padding: 3px 3px; text-align: left; font-size: 8px;font-weight:bold;
+    					border: 2px solid #135204;background-color: #1d7907;'> 
+    						$label array (indexed)
+    					</th>
 					</tr>
 				</thead>
 				<tbody>";
@@ -37,8 +49,19 @@
 			for ($i = 0; $i < $array_length; $i++) {
 				$array_dump .= 
 				"<tr>
-					<td class='indexed-array num-key'>$i</td>
-					<td class='indexed-array'>" . self::get_php_dump_html($variable[$i]) . "</td>
+					<td class='indexed-array num-key' style='border-collapse: collapse;
+					font-family: verdana, sans-serif; background-color: white;
+					vertical-align: top;padding: 2px 2px;font-size: 9px;
+					text-align: center;border: 2px solid #135204;
+					background-color: #83e66b;'>
+						$i
+					</td>
+					<td class='indexed-array' style='border-collapse: collapse;
+					font-family: verdana, sans-serif; background-color: white;
+					vertical-align: top; padding: 2px 2px; font-size: 9px;
+					border: 2px solid #135204;'>" 
+						. self::get_php_dump_html($variable[$i]) . "
+					</td>
 				</tr>";
 			}
 
@@ -53,10 +76,19 @@
 			$label .= (strlen($label)) ? " - " : "";
 
 			$array_dump = 
-			"<table class='php-dump associative-array'>
+			"<table class='php-dump associative-array' style='border-collapse: collapse;
+			font-family: verdana, sans-serif; background-color: white; vertical-align: top;
+			border:  2px solid #0034ce;'>
 				<thead>
 					<tr>
-						<th class='associative-array' colspan='2'> $label array (associative)</th>
+						<th class='associative-array' colspan='2' style='
+						border-collapse: collapse; font-family: verdana, sans-serif;
+						background-color: white; vertical-align: top;color: white;
+    					padding: 3px 3px; text-align: left; font-size: 8px;
+    					font-weight: bold; border:  2px solid #0034ce;
+    					background-color: #325ad2;'> 
+    						$label array (associative)
+    					</th>
 					</tr>
 				</thead>
 			<tbody>";
@@ -64,8 +96,18 @@
 			foreach ($variable as $key => $value) {
 				$array_dump .= 
 				"<tr>
-					<td class='associative-array text-key'>$key</td>
-					<td class='associative-array'>" . self::get_php_dump_html($value) . "</td>
+					<td class='associative-array text-key' style='border-collapse: collapse;
+					font-family: verdana, sans-serif; background-color: white;
+					vertical-align: top; padding: 2px 2px; font-size: 9px; 
+					text-align: left; border:  2px solid #0034ce;background-color:#aec2ff;'>
+						$key
+					</td>
+					<td class='associative-array' style='border-collapse: collapse;
+					font-family: verdana, sans-serif;background-color: white;
+					vertical-align: top;padding: 2px 2px;font-size: 9px;
+					border:  2px solid #0034ce;'>"
+						. self::get_php_dump_html($value) . "
+					</td>
 				</tr>";
 			}
 
@@ -108,27 +150,45 @@
 		}
 
 		public static function php_dump($variable, $label = "") {
-			// File paths
-			$file_loc = __DIR__;
-			$request_uri = $_SERVER["REQUEST_URI"];
-			$d_root_name = explode("/", $request_uri)[2];
-			$root_pos_dir = strpos($file_loc, $d_root_name);
-			$d_root_substr = substr($request_uri, 0, 
-				strpos($request_uri, $d_root_name));
-			$file_loc_substr = substr($file_loc, $root_pos_dir);
-			$src_path = $d_root_substr . $file_loc_substr;
 
-			// store src_path for js
-			echo "
-				<script type='text/javascript'>
-					if (typeof window.phpDumpSrcPath === 'undefined') {
-						window.phpDumpSrcPath = '" . $src_path ."'
+			echo '
+			<script type="text/javascript">
+				function toggle_values_display () {
+					var sibling = this.nextElementSibling;
+					var class_names_sibling = sibling.className;
+					var sibling_first_child = sibling.firstElementChild;
+
+					// check for no-display in first child of the sibling
+					var class_names_sibling_child = sibling_first_child.className;
+					var no_display_pos = class_names_sibling_child.indexOf("no-display");
+					if (no_display_pos === -1) {
+						// add no-display class if absent
+						sibling_first_child.className += " no-display";
+						//colorize the field with the color of the key
+						sibling.className += " " + this.className;
+					} else {
+						// remove no-display css class
+						sibling_first_child.className = class_names_sibling_child.replace("no-display", "");
+						// remove coloration
+						sibling.className = class_names_sibling.replace(this.className, "");
 					}
-				</script>
-			";
-			echo "<script type='text/javascript' 
-			src='" . $src_path ."/../assets/js/main.js' 
-			async></script>";
+				}
+
+				(function start_js() {
+					if (typeof window.notfirstdumpcall === "undefined") {
+						load_CSS();
+						var all_keys = document.querySelectorAll("td[class$=\'key\']");
+						var all_keys_length = all_keys.length;
+						
+						// add click event to all keys
+						for (let i = 0; i < all_keys_length; i++) {
+							all_keys[i].onclick = toggle_values_display;
+						}
+						window.notfirstdumpcall = true;
+					}
+				})();
+			</script>
+			';
 			
 			// Start dump
 			echo self::get_php_dump_html($variable, $label);
