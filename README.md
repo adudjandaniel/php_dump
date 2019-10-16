@@ -1,10 +1,10 @@
 ## Variable Dumping with PHP
 
 **Usage**: 
-* composer require adudjandaniel/php_dump
-* require_once /path/to/autoload.php (Add to php scripts)
-* use namespace PhpDump\Dump
-* Dump::php_dump(variable_name [, label])
+* composer require _adudjandaniel/php_dump_
+* require_once _/path/to/autoload.php_ (Add to php scripts)
+* use namespace _PhpDump\Dump_
+* _Dump::php_dump(variable_name [, label])_
 
 Being used to the _fancy_ dump Adobe Coldfusion uses, I can hardly make sense of the raw dumping in php; I need something similar.
 
