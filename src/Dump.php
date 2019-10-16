@@ -151,6 +151,9 @@
 
 		public static function php_dump($variable, $label = "") {
 
+			// Start dump
+			echo self::get_php_dump_html($variable, $label);
+
 			echo '
 			<script type="text/javascript">
 				function toggle_values_display () {
@@ -158,40 +161,33 @@
 					var class_names_sibling = sibling.className;
 					var sibling_first_child = sibling.firstElementChild;
 
-					// check for no-display in first child of the sibling
-					var class_names_sibling_child = sibling_first_child.className;
-					var no_display_pos = class_names_sibling_child.indexOf("no-display");
-					if (no_display_pos === -1) {
-						// add no-display class if absent
-						sibling_first_child.className += " no-display";
+					// check for hidden visibility in first child of the sibling
+					var style_names_sibling_child = sibling_first_child.style;
+					var visibility = style_names_sibling_child.display;
+					if (!visibility) {
+						// set hidden if visibility is empty
+						sibling_first_child.style.display = "none";
 						//colorize the field with the color of the key
-						sibling.className += " " + this.className;
+						sibling.style.backgroundColor = this.style.backgroundColor;
 					} else {
-						// remove no-display css class
-						sibling_first_child.className = class_names_sibling_child.replace("no-display", "");
+						// remove hidden css class
+						sibling_first_child.style.display = "";
 						// remove coloration
-						sibling.className = class_names_sibling.replace(this.className, "");
+						sibling.style.backgroundColor = "";
 					}
 				}
 
 				(function start_js() {
-					if (typeof window.notfirstdumpcall === "undefined") {
-						load_CSS();
-						var all_keys = document.querySelectorAll("td[class$=\'key\']");
-						var all_keys_length = all_keys.length;
-						
-						// add click event to all keys
-						for (let i = 0; i < all_keys_length; i++) {
-							all_keys[i].onclick = toggle_values_display;
-						}
-						window.notfirstdumpcall = true;
+					var all_keys = document.querySelectorAll("td[class$=\'key\']");
+					var all_keys_length = all_keys.length;
+					
+					// add click event to all keys
+					for (let i = 0; i < all_keys_length; i++) {
+						all_keys[i].onclick = toggle_values_display;
 					}
 				})();
 			</script>
 			';
-			
-			// Start dump
-			echo self::get_php_dump_html($variable, $label);
 		}
 	}	
 ?>
