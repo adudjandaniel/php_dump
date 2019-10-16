@@ -1,6 +1,6 @@
 ## Variable Dumping with PHP
 
-####Usage: 
+#### Usage: 
 * composer require _**adudjandaniel/php_dump**_
 * require_once _**/path/to/autoload.php**_ (Add to php scripts)
 * use namespace _**PhpDump\Dump**_
