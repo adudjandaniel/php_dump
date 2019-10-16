@@ -1,4 +1,4 @@
-## Variable and Error Dumping with PHP
+## Variable Dumping with PHP
 
 **Usage**: 
 * composer require adudjandaniel/php_dump
