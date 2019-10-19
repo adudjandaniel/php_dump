@@ -143,6 +143,7 @@
 					}
 					break;
 				default:
+					$dump = "";
 					break;
 			}
 
