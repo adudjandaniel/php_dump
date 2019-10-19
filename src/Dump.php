@@ -124,7 +124,7 @@
 				//Basic dumps
 				case 'string':
 				case 'integer':
-				case 'float':
+				case 'double':
 				case 'boolean':
 					$dump = self::dump_basic($variable, $label);
 					break;
